@@ -1,4 +1,4 @@
-package com.currency_converter.classes.Requests;
+package com.currency_converter.classes.requests;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

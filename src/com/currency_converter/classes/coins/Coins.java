@@ -1,4 +1,4 @@
-package com.currency_converter.classes.Coins;
+package com.currency_converter.classes.coins;
 
 public class Coins {
     private String coin1;

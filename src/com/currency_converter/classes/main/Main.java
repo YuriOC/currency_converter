@@ -1,13 +1,12 @@
-package com.currency_converter.classes.Main;
+package com.currency_converter.classes.main;
 
-import com.currency_converter.classes.Coins.Coins;
-import com.currency_converter.classes.Requests.Requests;
-import com.google.gson.Gson;
+import com.currency_converter.classes.coins.Coins;
+import com.currency_converter.classes.requests.Requests;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-public class main {
+public class Main {
     static void main() throws IOException, InterruptedException {
         Coins coin = new Coins();
         Scanner s = new Scanner(System.in);
