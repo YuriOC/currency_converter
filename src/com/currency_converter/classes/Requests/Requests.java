@@ -1,5 +1,9 @@
 package com.currency_converter.classes.Requests;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -7,8 +11,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Requests {
-    private String coin1;
-    private String coin2;
+    private double conRate;
 
     public Requests(String coinx, String coiny) throws IOException, InterruptedException {
 
@@ -21,19 +24,16 @@ public class Requests {
 
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
+            JsonElement element = JsonParser.parseString(response.body());
+            JsonObject object = element.getAsJsonObject();
+            conRate = object.get("conversion_rate").getAsDouble();
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 
-    public String getCoin1() {
-        return coin1;
-    }
-
-    public String getCoin2() {
-        return coin2;
+    public double getConRate() {
+        return this.conRate;
     }
 }
