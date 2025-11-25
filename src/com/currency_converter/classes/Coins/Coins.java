@@ -26,17 +26,8 @@ public class Coins {
         this.coin2 = coin2;
     }
 
-
-    public double getConRate(double conRate) {
-        return this.conRate;
-    }
-
     public void setConRate(double conRate) {
         this.conRate = conRate;
-    }
-
-    public double getAmount() {
-        return amount;
     }
 
     public void setAmount(String amount) {

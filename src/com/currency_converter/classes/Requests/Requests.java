@@ -12,6 +12,7 @@ import java.net.http.HttpResponse;
 
 public class Requests {
     private double conRate;
+    private String api_key = "API_KEY";
 
     public Requests(String coinx, String coiny) throws IOException, InterruptedException {
 
@@ -19,7 +20,7 @@ public class Requests {
             HttpClient client = HttpClient.newHttpClient();
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://v6.exchangerate-api.com/v6/API_KEY/pair/" + coinx + "/" + coiny))
+                    .uri(URI.create("https://v6.exchangerate-api.com/v6/" + api_key + "/pair/" + coinx + "/" + coiny))
                     .build();
 
             HttpResponse<String> response = client
